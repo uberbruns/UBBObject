@@ -36,52 +36,52 @@ Usage
 ```php
 $shopping_list = new UBBList("Mini Market");
 print_r($shopping_list->title());
-// -> Mini Market
+// Mini Market
 
 
 $shopping_list->set_title('Farmers Market');
 print_r($shopping_list->title());
-// -> Farmers Market
+// Farmers Market
 
 
-$shopping_list->add_item('Apples');
-$shopping_list->add_item('Pines');
 $shopping_list->add_item('Strawberries');
+$shopping_list->add_items('Apples','Pines');
 print_r($shopping_list->items());
-
-// -> Array
+// Array
 // (
-//     [0] => Apples
-//     [1] => Pines
-//     [2] => Strawberries
+//     [0] => Strawberries
+//     [1] => Apples
+//     [2] => Pines
 // )
 
 
 $shopping_list->insert_item(1,'Cherries');
 print_r($shopping_list->items());
-
-// -> Array
+// Array
 // (
-//     [0] => Apples
+//     [0] => Strawberries
 //     [1] => Cherries
-//     [2] => Pines
-//     [3] => Strawberries
+//     [2] => Apples
+//     [3] => Pines
 // )
 
 
 $shopping_list->remove_item(2,'Cherries');
 print_r($shopping_list->items());
-
-// -> Array
+// Array
 // (
-//     [0] => Apples
+//     [0] => Strawberries
 //     [1] => Cherries
-//     [2] => Strawberries
+//     [2] => Pines
 // )
 
-print_r($shopping_list->creation_date());
 
-// -> 1350816671
+print_r($shopping_list->get_item(1));
+// Cherries
+
+
+print_r($shopping_list->creation_date());
+// 1350816671
 ```
 
 

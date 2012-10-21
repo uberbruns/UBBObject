@@ -35,9 +35,8 @@ print_r($shopping_list->title());
 print_r("\n\n");
 
 
-$shopping_list->add_item('Apples');
-$shopping_list->add_item('Pines');
 $shopping_list->add_item('Strawberries');
+$shopping_list->add_items('Apples','Pines');
 print_r($shopping_list->items());
 print_r("\n\n");
 
@@ -49,6 +48,10 @@ print_r("\n\n");
 
 $shopping_list->remove_item(2,'Cherries');
 print_r($shopping_list->items());
+print_r("\n\n");
+
+
+print_r($shopping_list->get_item(1));
 print_r("\n\n");
 
 
